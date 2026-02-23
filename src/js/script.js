@@ -92,6 +92,7 @@ function initNavbarScroll() {
 
   const navLinks = navbar.querySelectorAll('.nav-link');
   const logo = navbar.querySelector('.logo-text');
+  const menuToggle = document.getElementById('menu-toggle');
 
   window.addEventListener('scroll', () => {
     if (window.scrollY > 80) {
@@ -104,6 +105,10 @@ function initNavbarScroll() {
         logo.classList.remove('text-white');
         logo.classList.add('text-blue-700');
       }
+      if (menuToggle) {
+        menuToggle.classList.remove('text-white');
+        menuToggle.classList.add('text-gray-700');
+      }
     } else {
       navbar.classList.remove('navbar-scrolled');
       navLinks.forEach(l => {
@@ -113,6 +118,10 @@ function initNavbarScroll() {
       if (logo) {
         logo.classList.remove('text-blue-700');
         logo.classList.add('text-white');
+      }
+      if (menuToggle) {
+        menuToggle.classList.remove('text-gray-700');
+        menuToggle.classList.add('text-white');
       }
     }
   });
